@@ -1,0 +1,78 @@
+<form [formGroup]="postData">
+    <div class="card form-control">
+        <h5>Registration Form</h5>
+        <div class="p-field p-grid">
+            <label for="firstname3" class="p-col-fixed " style="width:100px">First Name</label>
+            <div class="p-col">
+                <input id="Fname" type="text" formControlName="fname" class="form-control">
+                <div *ngIf="(!postData.get('fname')?.valid && postData.get('fname')?.touched)" class="help-block" style="color:brown"> Please enter email... </div>
+
+            </div>
+        </div>
+        <div class="p-field p-grid">
+            <label for="lastname3" class="p-col-fixed" style="width:100px">Last Name</label>
+            <div class="p-col">
+                <input id="lname" type="text" formControlName="lname">
+                <span *ngIf="(!postData.get('lname')?.valid && postData.get('lname')?.touched)" class="help-block" style="color:brown"> Please enter email... </span>
+
+            </div>
+        </div><br>
+        <div class="p-field p-grid">
+            <label for="lastname3" class="p-col-fixed" style="width:100px">Gender</label>
+            <div class="p-field-radiobutton">
+                <p-radioButton name="city" value="Chicago" inputId="city1"></p-radioButton>
+                <label for="city1">Male</label>
+            </div>
+
+            <div class="p-field-radiobutton">
+                <p-radioButton name="city" value="Chicago" inputId="city1" for="city1" lable="Male"></p-radioButton>
+                <label for="city1">Female</label>
+            </div>
+        </div><br>
+        <div class="p-field p-grid">
+            <label for="email" class="p-col-fixed" style="width:100px">Email</label>
+            <div class="p-col">
+                <input id="email" type="text" formControlName="email">
+                <span *ngIf="(!postData.get('email')?.valid && postData.get('email')?.touched)" class="help-block" style="color:brown"> Please enter email... </span>
+
+            </div>
+        </div><br>
+        <div class="p-field p-grid">
+            <label for="password" class="p-col-fixed" style="width:100px">Password</label>
+            <div class="p-col">
+                <input id="password" type="text" formControlName="password">
+                <span *ngIf="(!postData.get('password')?.valid && postData.get('password')?.touched)" class="help-block" style="color:brown"> Please enter email... </span>
+
+            </div>
+        </div><br>
+        <div class="p-field p-grid">
+            <label for="Address" class="p-col-fixed" style="width:100px">Address</label>
+            <div class="p-col">
+                <input id="address" type="text" formControlName="address">
+                <span *ngIf="(!postData.get('address')?.valid && postData.get('address')?.touched)" class="help-block" style="color:brown"> Please enter email... </span>
+
+            </div>
+        </div><br>
+
+        <div class="p-field p-grid">
+            <label for="city" class="p-col-fixed" style="width:100px">City</label>
+            <div class="p-col">
+                <input id="city" type="text" formControlName="city">
+                <span *ngIf="(!postData.get('city')?.valid && postData.get('city')?.touched)" class="help-block" style="color:brown"> Please enter email... </span>
+
+            </div>
+        </div><br>
+        <div class="p-field p-grid">
+            <label for="state" class="p-col-fixed" style="width:100px">State</label>
+            <div class="p-col">
+                <input id="state" type="text" formControlName="state">
+                <!-- <span *ngIf="(!loginForm.get('password').valid && loginForm.get('password').touched)" class="help-block" style="color:brown"> Please enter email... </span> -->
+
+            </div>
+        </div><br>
+        <div class="p-col">
+            <p-button label="Submit" (click)="createPost()"></p-button>
+        </div>
+
+    </div>
+</form>
